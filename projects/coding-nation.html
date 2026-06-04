@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link id='favicon' rel="shortcut icon" href="" type="image/x-png">
+    <title>Coding Nation | Rohit Chauhan</title>
+</head>
+<body>
+
+<header>
+    <a href="../index.html" class="logo"><i class="fab fa-node-js"></i> Rohit.dev</a>
+    <div class="header-right">
+        <div class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <span class="toggle-icon sun"><i class="fas fa-sun"></i></span>
+            <span class="toggle-ball"></span>
+            <span class="toggle-icon moon"><i class="fas fa-moon"></i></span>
+        </div>
+        <div id="menu" class="fas fa-bars"></div>
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#work">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="home" id="home" style="min-height:70vh;padding:12rem 9% 6rem;">
+    <div class="content">
+        <span class="greet" style="font-size:1.6rem;color:var(--orange);font-weight:500;">Featured Project</span>
+        <h2 style="font-size:4rem;font-weight:700;margin:0.5rem 0;">Coding Nation</h2>
+        <p style="font-size:1.8rem;color:var(--text2);max-width:600px;line-height:1.7;">A platform designed to help beginners start their coding journey with curated resources, tutorials, and hands-on practice materials.</p>
+        <div class="btn-group" style="margin-top:2rem;">
+            <a href="https://github.com/rohitsingh-02?tab=repositories" target="_blank" class="btn" style="display:inline-flex;"><span>View Code</span> <i class="fab fa-github"></i></a>
+            <a href="../index.html#work" class="btn btn-secondary" style="display:inline-flex;"><span>All Projects</span> <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
+    <div class="image" style="justify-content:center;">
+        <div class="img-frame" style="width:300px;">
+            <img draggable="false" src="../images/coding.jpg" alt="Coding Nation" style="height:auto;max-height:350px;">
+        </div>
+    </div>
+</section>
+
+<section class="about" id="details" style="padding:5rem 9%;">
+    <h2 class="heading" style="margin-bottom:3rem;">Project <span>Details</span></h2>
+    <div style="max-width:800px;margin:0 auto;">
+        <p style="font-size:1.6rem;color:var(--text2);line-height:1.8;margin-bottom:2rem;">Coding Nation is an educational platform where aspiring developers can start their coding journey with carefully curated resources and tutorials. The platform covers fundamental to advanced topics, making it easier for students and self-learners to build a strong foundation in programming.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem;">
+            <div class="skill-card fade-in" style="padding:2rem;text-align:center;">
+                <i class="fas fa-code" style="font-size:3rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem;display:block;"></i>
+                <h4 style="font-size:1.5rem;font-weight:600;color:var(--text);">Tech Stack</h4>
+                <p style="font-size:1.3rem;color:var(--text2);margin-top:0.5rem;">HTML, CSS, JavaScript</p>
+            </div>
+            <div class="skill-card fade-in" style="padding:2rem;text-align:center;">
+                <i class="fas fa-graduation-cap" style="font-size:3rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem;display:block;"></i>
+                <h4 style="font-size:1.5rem;font-weight:600;color:var(--text);">Focus</h4>
+                <p style="font-size:1.3rem;color:var(--text2);margin-top:0.5rem;">Beginner-Friendly, Curated Tutorials</p>
+            </div>
+            <div class="skill-card fade-in" style="padding:2rem;text-align:center;">
+                <i class="fas fa-calendar" style="font-size:3rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem;display:block;"></i>
+                <h4 style="font-size:1.5rem;font-weight:600;color:var(--text);">Status</h4>
+                <p style="font-size:1.3rem;color:var(--text2);margin-top:0.5rem;">In Development</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="../script.js"></script>
+<script>
+(function() {
+    var toggle = document.getElementById("theme-toggle");
+    var html = document.documentElement;
+    var theme = localStorage.getItem("theme") || "dark";
+    html.setAttribute("data-theme", theme);
+    if (toggle) {
+        toggle.addEventListener("click", function() {
+            var current = html.getAttribute("data-theme");
+            var next = current === "dark" ? "light" : "dark";
+            html.setAttribute("data-theme", next);
+            localStorage.setItem("theme", next);
+        });
+    }
+})();
+</script>
+</body>
+</html>
